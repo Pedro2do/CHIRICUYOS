@@ -1,67 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Index.html</title>
-<style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-display: grid;
-grid-template-columns: 25% 75%;
-height: 100vh;
-}
-nav {
-background-color: BLUE;
-padding: 20px;
-border-right: 2px solid #ccc;
-}
-nav a {
-display: block;
-margin: 10px 0;
-text-decoration: none;
-color: black;
-font-weight: bold;
-}
-iframe {
-width: 100%;
-height: 100%;
-border: none;
-}
- li { 
-          
-            margin-bottom: 5px; 
-            border-radius: 5px; 
-        } 
- 
-        /* 5-9. Estilos de los enlaces dentro de li */ 
-        li a { 
-            display: block;
-            display-items: center; 
-            padding: 10px; 
-            text-decoration: none; 
-            color: white; 
-            transition: all 0.3s; 
-        } 
- 
-        /* 10-13. Hover de los enlaces */ 
-        li a:hover { 
-            font-size: 18px; 
-            background-color: BLUE; 
-        } 
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Dental Sonrisas</title>
+    <style>
+        /* ---------- VARIABLES DE COLOR ---------- */
+        :root {
+            --bg: #f0f6ff;
+            --text: #333;
+            --header-bg: linear-gradient(135deg, #37b7ff, #0094d9);
+            --card-bg: white;
+            --contact-bg: #e8f6ff;
+            --footer-bg: #0094d9;
+            --link-color: white;
+        }
+
+        /* MODO OSCURO */
+        .dark-mode {
+            --bg: #0f172a;
+            --text: #e2e8f0;
+            --header-bg: linear-gradient(135deg, #0ea5e9, #0369a1);
+            --card-bg: #1e293b;
+            --contact-bg: #1e293b;
+            --footer-bg: #0ea5e9;
+            --link-color: #dbeafe;
+        }
+
+        /* ---------- ESTILOS GENERALES ---------- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.4s ease, color 0.4s ease;
+            font-size: 18px;
+        }
+
+        header, footer, .contacto, .hero {
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* ---------- ENCABEZADO ---------- */
+        header {
+            background: var(--header-bg);
+            padding: 25px 40px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+            font-size: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--link-color);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* ---------- BOTÓN MODO OSCURO ---------- */
+        .toggle-dark {
+            background: rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            color: white;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        .toggle-dark:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 50px;
+            background: var(--card-bg);
+            animation: slideIn 1s ease-out;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 55%;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #0083c1;
+        }
+
+        .dark-mode .hero-text h2 {
+            color: #38bdf8;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .hero-img {
+            width: 45%;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ---------- CONTACTO ---------- */
+        .contacto {
+            background: var(--contact-bg);
+            padding: 50px;
+            text-align: center;
+            animation: slideIn 1.2s ease-out;
+            font-size: 20px;
+        }
+
+        .contacto h3 {
+            font-size: 36px;
+            color: #0077b6;
+        }
+
+        .dark-mode .contacto h3 {
+            color: #38bdf8;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--footer-bg);
+            color: white;
+            font-size: 18px;
+            animation: fadeIn 2s ease-out;
+        }
+    </style>
 </head>
 <body>
-<!-- Menú -->
-<nav><li>
-<font color="bluelith"><p>CONSULTORIO CHICUYOS</p> </font> <br>
-<center><a href="contacto.html" target="contenido">CONTACTO A REDES</a><br>
-<a href="especialidades.html" target="contenido">SECCION DE SERVICIOS</a><br>
-<a href="nuestroequipo.html" target="contenido">NUESTRO EQUIPO</a><br>
-<a href="formulariodecitas.html" target="contenido">FORMULARIO DE CITAS</a><br>
-</li></nav>
-<!-- Área de contenido -->
-<iframe name="contenido" src="contacto.html"></iframe>
+
+    <header>
+        <h1>Consultorio Dental Sonrisas</h1>
+
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Citas</a>
+            <a href="#">Contacto</a>
+            <a href="#">Equipo</a>
+        </nav>
+
+        <button class="toggle-dark" onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Tu sonrisa es nuestra prioridad</h2>
+            <p>
+                Bienvenido a nuestro consultorio dental, donde combinamos tecnología,
+                profesionalismo y un trato cálido para brindarte la mejor atención 
+                en salud bucal. Nuestro compromiso es ofrecerte una experiencia cómoda,
+                segura y con resultados excepcionales.
+            </p>
+        </div>
+
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=60" alt="Consultorio dental">
+        </div>
+    </section>
+
+    <section class="contacto">
+        <h3>Datos de Contacto</h3>
+        <p>📍 Dirección: Av. Central #123, Ciudad</p>
+        <p>📞 Teléfono: (555) 123-4567</p>
+        <p>📧 Correo: contacto@sonrisasdental.com</p>
+        <p>🕒 Horario: Lunes a Viernes – 9:00 a 18:00</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Consultorio Dental Sonrisas – Todos los derechos reservados.
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const boton = document.querySelector('.toggle-dark');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                boton.textContent = "☀️ Modo Claro";
+            } else {
+                boton.textContent = "🌙 Modo Oscuro";
+            }
+        }
+    </script>
 
 </body>
 </html>
