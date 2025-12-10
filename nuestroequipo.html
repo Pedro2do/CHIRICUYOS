@@ -1,12 +1,139 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>NUESTRO EQUIPO</title>
-<link rel="stylesheet" type="text/css" href="footer.css">
-<style>
+<title>nuestroequipo</title>
 
-</style>
-<h3>hola</h3>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Carga de Tailwind CSC_ acomo de las cosas 	IMPORTANTE-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+
+        /* Configuración de fuente Inter para la interfaz */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #C0C0C0;
+        }
+         .banner { 
+            height: 200px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: linear-gradient(to right, #6495ED, #1E90FF); 
+            color: white; 
+            font-size: 24px; 
+            font-family: sans-serif; 
+            text-align: center; 
+        } 
+        /* asegurar que las imágenes llenen su contenedor sin distorsión */
+        .grid-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajustar la imagen cubriendo el área */
+            transition: transform 0.3s ease-in-out;
+        }
+        .grid-image:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#191970', 
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+
+
+
+<body class="p-4 sm:p-8 lg:p-12">
+    <section class="banner"> 
+       Nuestro Equipo 
+    </section> <br><br>
+
+    <div class="max-w-7xl mx-auto">
+     
+        <!-- Contenedor principal de la cuadrícula -->
+        <!-- Responsive Grid Setup:
+             - grid-cols-1: Móvil (1 columna)
+             - md:grid-cols-2: Tablet (2 columnas)
+             - lg:grid-cols-3: Desktop (3 columnas)
+             IMPORTANTE
+        -->
+
+        <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Imagen 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-xl transition duration-300">
+                <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.v-KVdH0QNuxFRCmMD4DagAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="DOCO" class="grid-image" loading="lazy">
+                </div>
+                <div class="p-4">
+                    <p class="text-sm font-semibold text-primary">DOC. Oct<br> especialista en niños</p>
+                </div>
+            </div>
+
+            <!--  Imagen 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-xl transition duration-300">
+                <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.wHcV436Y_Ja78gAx_TkjMQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3.jpeg" alt="COCS"
+                     class="grid-image" loading="lazy">
+                </div>
+                <div class="p-4">
+                    <p class="text-sm font-semibold text-primary">DOC. Sarahi<br> especialistaen colores</p>
+                </div>
+            </div>
+
+            <!--  Imagen 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-xl transition duration-300">
+                <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.IoOfkjtG3vb4UK7LjDzimAHaOO?rs=1&pid=ImgDetMain&o=7&rm=3.jpeg" alt="docv" class="grid-image" loading="lazy">
+                </div>
+                <div class="p-4">
+                    <p class="text-sm font-semibold text-primary">Doc. Vanessa<br>especialista en estomago</p>
+                </div>
+            </div>
+
+            <!-- Imagen 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-xl transition duration-300">
+                <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.-BlVO77ffMQNICTpvosVvgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3.jpeg" alt="DOCP" class="grid-image" loading="lazy">
+                </div>
+                <div class="p-4">
+                    <p class="text-sm font-semibold text-primary">Doc Pedro.<br> especialista en bichos</p>
+                </div>
+            </div>
+
+            <!--  Imagen 5 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-xl transition duration-300">
+                <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
+                    <img src="https://static.vecteezy.com/system/resources/previews/024/585/358/non_2x/3d-happy-cartoon-doctor-cartoon-doctor-on-transparent-background-generative-ai-png.png" alt="DocA" class="grid-image" loading="lazy">
+                </div>
+                <div class="p-4">
+                    <p class="text-sm font-semibold text-primary">DOC. Amanda<br> epecialista en brazos</p>
+                </div>
+            </div>
+
+            <!--Imagen 6 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:shadow-xl transition duration-300">
+                <div class="h-64 sm:h-72 lg:h-80 overflow-hidden">
+                    <img src="https://th.bing.com/th/id/R.82270cc10383b583ec0cff053fdf9644?rik=xFS2gqGwju%2b85A&pid=ImgRaw&r=0.png" alt="DocA" class="grid-image" loading="lazy">
+                </div>
+                <div class="p-4">
+                    <p class="text-sm font-semibold text-primary">DOC. Alianza. <br> Especialista en ojos</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
 </html>
