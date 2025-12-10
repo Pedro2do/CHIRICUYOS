@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Dental "CHIRICUYOS"</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<style>
+    /* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+/* ENCABEZADO */
+header {
+    background-color: #007bff; /* Azul profesional */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECCIONES GENERALES */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* FORMULARIO */
+#citas {
+    background: white;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#citaForm label,
+#citaForm input,
+#citaForm select,
+#citaForm button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#citaForm input,#citaForm select{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#citaForm button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#citaForm button:hover {
+    background-color: #005bb5;
+}
+
+/*RESPONSIV BASICO: APLICAR ESTILOS PARA PANTALLAS PEQUEÑAS*/
+@MEDIA(max-width: 768px){
+    header h1
+    font-size: 1.5em;
+}
+
+/* MENSAJE */
+#mensaje {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ddd;
+    margin-top: 40px;
+}
+
+</style>
+<body>
+
+<header>
+    <h1>Clínica Dental "CHIRICUYOS"</h1>
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#citas">Citas</a>
+    </nav>
+</header>
+
+<section id="servicios">
+    <h2>Nuestras Especialidades</h2>
+</section>
+
+<section id="equipo">
+    <h2>Conoce a Nuestros Dentistas</h2>
+</section>
+
+<section id="citas">
+    <h2>Solicitar Cita</h2>
+    <form id="citaForm">
+
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required>
+
+        <label for="especialidad">Especialidad Requerida:</label>
+        <select id="especialidad" required>
+            <option value="">Seleccione una...</option>
+            <option value="Periodoncia">Periodoncia</option>
+            <option value="Cirujia oral y maxilofacial">Cirujia oral y maxilofacial</option>
+            <option value="Anesteologia dental">Anesteologia dental</option>
+            <option value="Endodoncia">ENdodoncia</option>
+            <option value="Radiologia oral y maxilofacial">Radiologia oral y maxilofacial</option>
+        </select>
+
+        <button type="submit">Enviar Solicitud</button>
+
+        <p id="mensaje"></p>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Clínica Dental CHIRICUYOS</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+//B. Estilos CSS3 (css/styles.css)
+Se recomienda el uso de Flexbox o Grid para las secciones de servicios y equipo.
+
+CSS
+/* RESET BÁSICO */ 
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
